@@ -4,72 +4,71 @@ AddCSLuaFile()
 SWEP.HoldType = "knife"
 
 if ( CLIENT ) then
-	SWEP.PrintName			= "Falchion Knife | Slaughter"
-	SWEP.DrawAmmo 			= false
-	SWEP.DrawCrosshair 		= true
-	SWEP.ViewModelFOV		= 65
-	SWEP.ViewModelFlip		= false
-	SWEP.CSMuzzleFlashes	= true
-	SWEP.UseHands			= true
-	
-	SWEP.Slot				= 2
-	SWEP.SlotPos			= 0
-	--SWEP.IconLetter			= "j"
+  SWEP.PrintName      = "Shadow Daggers | Starlit"
+  SWEP.DrawAmmo       = false
+  SWEP.DrawCrosshair    = true
+  SWEP.ViewModelFOV   = 65
+  SWEP.ViewModelFlip    = false
+  SWEP.CSMuzzleFlashes  = true
+  SWEP.UseHands     = true
+  
+  SWEP.Slot       = 2
+  SWEP.SlotPos      = 0
+  --SWEP.IconLetter     = "j"
 
-	--killicon.AddFont("weapon_knife", "CSKillIcons", SWEP.IconLetter, Color( 255, 80, 0, 255 ))
-	--surface.CreateFont("CSKillIcons", {font = "csd", size = ScreenScale(30), weight = 500, antialias = true, additive = true})
-	--surface.CreateFont("CSSelectIcons", {font = "csd", size = ScreenScale(60), weight = 500, antialias = true, additive = true})
+  --killicon.AddFont("weapon_knife", "CSKillIcons", SWEP.IconLetter, Color( 255, 80, 0, 255 ))
+  --surface.CreateFont("CSKillIcons", {font = "csd", size = ScreenScale(30), weight = 500, antialias = true, additive = true})
+  --surface.CreateFont("CSSelectIcons", {font = "csd", size = ScreenScale(60), weight = 500, antialias = true, additive = true})
 end
 
 SWEP.Base = "csgo_baseknife"
 
-SWEP.Category			= "CS:GO Knives"
+SWEP.Category     = "CS:GO Knives"
 
-SWEP.Spawnable				= true
-SWEP.AdminSpawnable			= true
+SWEP.Spawnable        = true
+SWEP.AdminSpawnable     = true
 
-SWEP.ViewModel 			= "models/weapons/v_csgo_falchion.mdl"
-SWEP.WorldModel 		= "models/weapons/w_csgo_falchion.mdl" 
+SWEP.ViewModel 			= "models/weapons/v_csgo_push.mdl"
+SWEP.WorldModel 		= "models/weapons/w_csgo_push.mdl"
 
-SWEP.DrawWeaponInfoBox  	= false
-
-SWEP.Weight					= 5
-SWEP.AutoSwitchTo			= false
-SWEP.AutoSwitchFrom			= false
-
-SWEP.Skin                   = "models/csgo_knife/knife_falchion_slaughter"
-
-SWEP.DrawCrosshair     		= false
+SWEP.DrawCrosshair      = false
 SWEP.Primary.Damage         = 50
 SWEP.Primary.ClipSize       = -1
 SWEP.Primary.DefaultClip    = -1
 SWEP.Primary.Automatic      = true
-SWEP.Primary.Delay 			= 0.6
-SWEP.Primary.Ammo       	= "none"
-SWEP.Secondary.Damage   	= 75
+SWEP.Primary.Delay = 0.6
+SWEP.Primary.Ammo       = "none"
+SWEP.Secondary.Damage   = 75
 SWEP.Secondary.ClipSize     = -1
 SWEP.Secondary.DefaultClip  = -1
 SWEP.Secondary.Automatic    = true
-SWEP.Secondary.Ammo     	= "none"
-SWEP.Secondary.Delay 		= 1.8
+SWEP.Secondary.Ammo     = "none"
+SWEP.Secondary.Delay = 1.8
 
-SWEP.Base 			= "weapon_tttbase"
-SWEP.Kind 			= WEAPON_EQUIP2
-SWEP.AutoSpawnable 	= false
-SWEP.InLoadoutFor 	= nil
-SWEP.AllowDrop 		= true
-SWEP.IsSilent 		= false
+SWEP.DrawWeaponInfoBox    = false
 
-SWEP.Primary.ClipSize     	= -1
+SWEP.Weight         = 5
+SWEP.AutoSwitchTo       = false
+SWEP.AutoSwitchFrom     = false
+SWEP.Skin 					= "models/csgo_knife/knife_push_starlit.vmt"
+
+SWEP.Base = "weapon_tttbase"
+SWEP.Kind = WEAPON_EQUIP2
+SWEP.AutoSpawnable = false
+SWEP.InLoadoutFor = nil
+SWEP.AllowDrop = true
+SWEP.IsSilent = false
+
+SWEP.Primary.ClipSize     = -1
 SWEP.Primary.Damage         = -1
 SWEP.Primary.DefaultClip    = -1
 SWEP.Primary.Automatic      = true
-SWEP.Primary.Ammo         	="none"
+SWEP.Primary.Ammo         ="none"
 
 
 SWEP.Secondary.ClipSize     = -1
-SWEP.Secondary.DefaultClip  = -1
-SWEP.Secondary.Damage     	= -1
+SWEP.Secondary.DefaultClip    = -1
+SWEP.Secondary.Damage     = -1
 SWEP.Secondary.Automatic    = true
 SWEP.Secondary.Ammo         ="none"
 
@@ -181,8 +180,8 @@ function SWEP:DoAttack( Altfire )
     local Attacker  = self:GetOwner()
     local Range     = Altfire and 48 or 64
     local Forward   = Attacker:GetAimVector()
-  	local AttackSrc = Attacker:EyePos()
-  	local AttackEnd = AttackSrc + Forward * Range
+  local AttackSrc = Attacker:EyePos()
+  local AttackEnd = AttackSrc + Forward * Range
     local Act
     local Snd
     local Backstab
@@ -192,9 +191,9 @@ function SWEP:DoAttack( Altfire )
     
     local tracedata = {}
 
-  	tracedata.start     = AttackSrc
-  	tracedata.endpos    = AttackEnd
-  	tracedata.filter    = Attacker
+  tracedata.start     = AttackSrc
+  tracedata.endpos    = AttackEnd
+  tracedata.filter    = Attacker
     tracedata.mask      = MASK_SOLID
     tracedata.mins      = Vector( -16 , -16 , -18 )
     tracedata.maxs      = Vector( 16, 16 , 18 )
