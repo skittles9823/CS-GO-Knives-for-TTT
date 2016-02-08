@@ -54,7 +54,7 @@ SWEP.Secondary.Ammo     	= "none"
 SWEP.Secondary.Delay 		= 1.8
 
 SWEP.Base 			= "weapon_tttbase"
-SWEP.Kind 			= WEAPON_EQUIP2
+//SWEP.Kind 			= WEAPON_EQUIP2
 SWEP.AutoSpawnable 	= false
 SWEP.InLoadoutFor 	= nil
 SWEP.AllowDrop 		= true
