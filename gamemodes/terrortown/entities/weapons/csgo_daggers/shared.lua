@@ -53,7 +53,7 @@ SWEP.AutoSwitchFrom     = false
 
 
 SWEP.Base = "weapon_tttbase"
-SWEP.Kind = WEAPON_EQUIP2
+//SWEP.Kind = WEAPON_EQUIP2
 SWEP.AutoSpawnable = false
 SWEP.InLoadoutFor = nil
 SWEP.AllowDrop = true
